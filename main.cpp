@@ -1,62 +1,30 @@
 #include <iostream>
-#include "Fraction.h"
+#include "Vector.h"
+#include "line.h"
+#include "Plane.h"
+
 using namespace std;
 int main() {
-	Fraction fr1;
-	fr1.store(1, 2);
-	Fraction fr2(1, 4);
-	Fraction fr3(2);
-	Fraction fr4;
+	Point p1(0, 0, 0);
+	Point p2(2, 0, -1);
+	Point p3(0, 1, 0);
+	Point p4(2, 4, 6);
+	cout << p1.innerProduct(p2, p3) << endl;
+	cout << (p1.outerProduct(p2, p3)).toString() << endl;
+	cout << (p1.plus(p2, p3)).toString() << endl;
+	cout << (p1.minus(p2, p3)).toString() << endl;
+	cout << p4.magnitude();
+	cout << (p4.normalize()).toString()<<endl;
 
-	fr1.print();
-	cout << endl;
-	fr2.print();
-	cout << endl;
-	fr3.print();
-	cout << endl;
-	fr4.print();
-	cout << endl;
-
-	cout << fr2.getnumer() << endl;
-	cout << fr2.getdenom() << endl;
-	cout << fr3.getnumer() << endl;
-	cout << fr3.getdenom() << endl;
-	fr3.setnumer(3);
-	fr3.setdenom(4);
-	fr3.print();
-	(fr2 + fr1++).print();
-	fr1.print();
-	fr1 = fr1 - 1;
-	(fr2 + ++fr1).print();
-	fr1.print();
-	fr1 = fr1 - 1;
-	fr4 = fr1 + fr2 + fr3;
-	fr4.print();
-	cout << endl;
-	fr3 = Fraction(3, 0);
-	fr4 = fr3 - fr2 - fr1;
-	fr4.print();
-	cout << endl;
-	fr4 = fr1 * fr2 * fr3;
-	fr4.print();
-	cout << endl;
-	fr4 = fr1 / fr2 / fr3;
-	fr4.print();
-	cout << endl;
-	fr4 = 1;
-	fr4.print();
-	cout << endl;
-	fr4 += fr1 + fr2 + fr3;
-	fr4.print();
-	cout << endl;
-            return 0;
-	
-
-
-
-	
-
-
-
-
+	Line l1(p1, p2);
+	Line l2;
+	cout << l1.toString() << endl;
+	cout << l2.toString() << endl;
+	cout << (l1.projectTo(p4)).toString()<<endl;
+	Plane pl1(p1, p2, p3);
+	Plane pl2;
+	cout << pl1.toString() << endl;
+	cout << pl2.toString() << endl;
+	cout << (pl1.projectTo(p4)).toString()<<endl;
+	return 0;
 }
