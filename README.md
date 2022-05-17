@@ -1,4 +1,4 @@
-# c++_programming
+# cpp_programming
 
 assign1
 [prob1_2020041.docx](https://github.com/park-hyeonbeen/c_programming/files/8707942/prob1_2020041.docx)
