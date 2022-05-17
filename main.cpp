@@ -1,7 +1,12 @@
-#include "Application.h"
+#include "mainwindow.h"
+#include <QApplication>
 
-int main() {
-	Application app;
-	app.Run();
-	return 0;
+//MainWindow object 생성
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
+
+    return a.exec();
 }
